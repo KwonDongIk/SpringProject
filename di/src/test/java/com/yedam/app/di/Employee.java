@@ -1,45 +1,23 @@
 package com.yedam.app.di;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 // 캡슐화
+@Setter
+@Getter
+@ToString
+@AllArgsConstructor
+//@NoArgsConstructor
+@RequiredArgsConstructor
 public class Employee {
 	
-	private String fname;
+	private final String fname;
 	private String lname;
-	private int salary;
-	
-	
-	public Employee(String fname, String lname, int salary) {
-		super();
-		this.fname = fname;
-		this.lname = lname;
-		this.salary = salary;
-	}
+	private final int salary;
 
-	// 객체가 생성될 때 필드 초기화
-	public Employee(String fname, int salary) {
-		super();
-		this.fname = fname;
-		this.salary = salary;
-	}
-	
-	
-	@Override
-	public String toString() {
-		return "Employee [fname=" + fname + ", lname=" + lname + ", salary=" + salary + "]";
-	}
-
-
-	public String getLname() {
-		return lname;
-	}
-	public void setLname(String lname) {
-		this.lname = lname;
-	}
-	public String getFname() {
-		return fname;
-	}
-	public int getSalary() {
-		return salary;
-	}
 
 }

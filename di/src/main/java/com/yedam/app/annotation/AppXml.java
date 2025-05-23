@@ -8,5 +8,6 @@ public class AppXml {
 		ApplicationContext context = new ClassPathXmlApplicationContext("contextAnnotation.xml");
 		TV tv = context.getBean("tv", TV.class);
 		tv.powerOn();
+		tv.volumeUp();
 	}
 }

@@ -1,22 +1,23 @@
 package com.yedam.app.annotation;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.scan.BoardService;
+import com.yedam.app.di.Speaker;
+
+import lombok.RequiredArgsConstructor;
+//2. 생성자 주입
+//@RequiredArgsConstructor
+@Component("tv")
 public class SamsungTV implements TV{
 	
-	public SamsungTV(Speaker speaker) {
-		super();
-		this.speaker = speaker;
-	}
-
+	//1. 필드 주입 방법
+	//@Autowired
+	//3. Setter 방식
+	//@Setter(onMethod_ = {@Autowired})
 	private Speaker speaker;
 	
-	public void setSpeaker(Speaker speaker) {
-		this.speaker = speaker;
-	}
-	
-	public SamsungTV() {
-		System.out.println("===> SamsungTV");
-	}
-
 	public void powerOn() {
 		System.out.println("SamsungTV powerOn");
 	}

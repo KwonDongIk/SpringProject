@@ -1,21 +1,12 @@
 package com.yedam.app.di;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+@Component("tv")
 public class SamsungTV implements TV{
 	
-	public SamsungTV(Speaker speaker) {
-		super();
-		this.speaker = speaker;
-	}
-
+	//@Autowired
 	private Speaker speaker;
-	
-	public void setSpeaker(Speaker speaker) {
-		this.speaker = speaker;
-	}
-	
-	public SamsungTV() {
-		System.out.println("===> SamsungTV");
-	}
 
 	public void powerOn() {
 		System.out.println("SamsungTV powerOn");
