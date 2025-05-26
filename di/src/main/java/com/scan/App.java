@@ -2,6 +2,7 @@ package com.scan;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+// App.java
 public class App {
 	public static void main(String[] args) {
 		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("contextAnnotation.xml");
