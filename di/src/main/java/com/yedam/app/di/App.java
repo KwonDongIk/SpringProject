@@ -4,8 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * Hello world!
- * XML, JAVA
+ * XML, JAVA, annotation 방식
  */
 public class App 
 {
