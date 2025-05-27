@@ -23,5 +23,6 @@ public class Employees {
 	private String managerId;
 	private String departmentId;
 	private String cnt;
-
+	
+	Department department;
 }

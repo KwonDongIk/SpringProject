@@ -14,4 +14,5 @@
 		int insert(Employees employee);
 		int updateLastName(Employees employee);
 		int deleteLastName(int employeeId);
+		List<Employees> findEmployeeDepartment();
 	}

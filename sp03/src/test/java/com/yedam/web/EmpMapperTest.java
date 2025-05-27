@@ -13,21 +13,32 @@ import com.yedam.web.mapper.EmpMapper;
 import com.yedam.web.model.Employees;
 import com.yedam.web.model.SearchVO;
 
+import jdk.internal.org.jline.utils.Log;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"classpath:/spring/datasource-context.xml", "classpath:/spring/mybatis-context.xml"})
 public class EmpMapperTest {
 	
 	@Autowired EmpMapper empMapper;
 	
-	@Test
+	//@Test
 	public void 전체조회() {
 		SearchVO searchVO = new SearchVO();
-				 //searchVO.setDepartmentId("30");
-				 //searchVO.setSalary("3000");
-				   searchVO.setIds(Arrays.asList(100, 101, 102));
+				 searchVO.setDepartmentId("30");
+				 searchVO.setSalary("3000");
+				 searchVO.setIds(Arrays.asList(100, 101, 102));
 				
 		empMapper.findAll(searchVO).forEach(emp->
 				System.out.println(emp.getEmployeeId() +":" + emp.getFirstName()));
+	}
+	
+	@Test
+	public void findEmployeeDepartment() {
+		List<Employees> list = empMapper.findEmployeeDepartment();
+		//Log.info(list.toString());
+		list.forEach(emp -> Log.info(emp.getFirstName() + ":" + emp.getDepartment().getDepartmentName()));
 	}
 	
 	//@Test
