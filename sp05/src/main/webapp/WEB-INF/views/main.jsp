@@ -11,6 +11,8 @@ main입니다.
 ${sampleDTO}<br>
 ${param.name}<!-- request.getParameter("") --><br>
 ${param.age}<br>
-${dept}
+${dept}<br>
+name : ${param.name}<br>
+msg : ${msg}
 </body>
 </html>
