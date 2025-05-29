@@ -15,6 +15,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.yedam.board.service.BoardService;
 import com.yedam.board.service.BoardVO;
+import com.yedam.board.service.CriteriaVO;
+import com.yedam.board.service.PageDTO;
 
 import lombok.RequiredArgsConstructor;
 
@@ -31,9 +33,14 @@ public class BoardController {
 	 * @return
 	 */
 	@GetMapping("/list")
-	public String getMethodName(Model model) {
+	public String getMethodName(CriteriaVO cri, Model model) {
 		
-		model.addAttribute("list", boardService.getList());
+		model.addAttribute("list", boardService.getList(cri));
+		
+		//paing 처리
+		long total = boardService.getTotal(cri);
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
+				
 		return "board/list";
 	
 	}
@@ -46,8 +53,9 @@ public class BoardController {
 	
 	// 등록 처리 후 목록 이동
 	@PostMapping("/register")
-	public String register(BoardVO vo){
+	public String register(BoardVO vo, RedirectAttributes rttr){
 		boardService.insertboard(vo);
+		rttr.addFlashAttribute("result", vo.getBno());
 		return "redirect:list";
 		
 	}

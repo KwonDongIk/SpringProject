@@ -3,6 +3,7 @@ package com.yedam.board.mapper;
 import java.util.List;
 
 import com.yedam.board.service.BoardVO;
+import com.yedam.board.service.CriteriaVO;
 
 public interface BoardMapper {
 	
@@ -11,7 +12,9 @@ public interface BoardMapper {
 //	List<Map<String,Object>> findAlltoMap();
 //	List<BoardVO> getCount();
 	
-	public List<BoardVO> getList();
+	public List<BoardVO> getList(CriteriaVO cri);
+	
+	public Long getTotal(CriteriaVO cri);
 	
 	public int insertboard(BoardVO board);
 	public int insertSelectKey(BoardVO board);

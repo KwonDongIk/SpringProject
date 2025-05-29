@@ -8,7 +8,9 @@ public interface BoardService {
 //	List<Map<String,Object>> findAlltoMap();
 //	List<BoardVO> getCount();
 	
-	public List<BoardVO> getList();
+	public List<BoardVO> getList(CriteriaVO cri);
+	
+	public Long getTotal(CriteriaVO cri);
 	
 	public int insertboard(BoardVO board);
 	public int insertSelectKey(BoardVO board);

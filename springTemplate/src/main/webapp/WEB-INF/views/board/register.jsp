@@ -5,49 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>등록 페이지</title>
-<style>
-	.panel-heading{
-		text-align: center;
-		font-size: 50px;
-	}
-	.main-form{
-       	background: white;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        padding: 40px;
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-	}
-    .form-group {
-        margin-bottom: 25px;
-        text-align: center;
-    }
-    
-    .form-label {
-        font-weight: 600;
-        color: #495057;
-        margin-bottom: 8px;
-        font-size: 1.1rem;
-    }
-    
-    .form-control {
-        border: 2px solid #e9ecef;
-        border-radius: 8px;
-        padding: 12px 15px;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-    }
-    
-    .btn {
-    	width: 100px;
-    	height: 100px;
-    	background-color: #000;
-    	color: #FFF;
-    	cursor: pointer;
-    }
-</style>
 </head>
+<%@include file="/WEB-INF/views/includes/header.jsp" %>
 <body>
 	<div class="row">
 		<div class="col-lg-12">
