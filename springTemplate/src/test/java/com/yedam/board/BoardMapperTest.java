@@ -24,7 +24,7 @@ public class BoardMapperTest {
 	
 	//@Test
 	public void testGetTime() {
-		boardMapper.getList().forEach(board->
+		boardMapper.getList(null).forEach(board->
 									log.info(board));
 	}
 	
