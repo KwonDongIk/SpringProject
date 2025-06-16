@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+// 평균을 계산하고 평균 미달 성적만 출력하시오.
+// 총점계산 -> 평균계산 -> 평균미달성적출력
 public class ForArray {
 	
 	public static void main(String[] args) throws FileNotFoundException{
@@ -19,22 +21,42 @@ public class ForArray {
 		int cnt = sc.nextInt();
 		int[] a = new int[cnt];
 		
+		//합계계산
+		total = calcTotal(a, sc);
+		
+		//합계출력
+		System.out.println("합계 : " + total);
+		
+		//평균
+		double temp = total / cnt;
+		//미달건수
+		int test = 0;
+		
 		for(int i=0; i<cnt; i++) {
+			// 평균보다 작은 성적만 ???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+			if(a[i] < temp) {
+				test++;
+				System.out.println("평균보다 작은 점수 : " + a[i]);
+			}
+		}
+		System.out.println("전체건수 : " + cnt);
+		System.out.println("미달건수 : " + test);
+		
+	}
+	
+	public static int calcTotal(int [] a, Scanner sc) {
+		
+		int total = 0;
+		
+		for(int i=0; i<a.length; i++) {
 			
-			score = sc.nextInt();
+			int score = sc.nextInt();
 			// 입력값을 배열에 저장
 			a[i] = score;
 			total += score;
 			
 		}
-		
-		for(int i=0; i<cnt; i++) {
-			System.out.println("배열의 반복 : " + a[i]);
-		}
-		
-		
-		//합계출력
-		System.out.println("합계 : " + total);
+		return total;
 	}
 	
 
