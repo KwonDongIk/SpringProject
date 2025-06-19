@@ -1,5 +1,7 @@
 package method;
 
+import api.StringUtil;
+
 public class Calc {
 
 	private int kor;
@@ -20,6 +22,7 @@ public class Calc {
 		System.out.println("====================");
 		System.out.printf("=======%s=======\n", msg);
 		System.out.println("====================");
+		StringUtil.getYear(msg);
 
 	}
 }
